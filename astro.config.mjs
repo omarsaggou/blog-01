@@ -11,7 +11,7 @@ export default defineConfig({
   markdown: {
     drafts: true
   },
-  site: 'https://astro-blog-cip.netlify.app',
+  site: 'https://we-codes-blog.netlify.app',
   integrations: [react(), image({
     serviceEntryPoint: '@astrojs/image/sharp'
   }), sitemap(), tailwind(), partytown()]
