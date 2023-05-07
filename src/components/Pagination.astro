@@ -1,0 +1,40 @@
+---
+import Link from "./Link.astro";
+const { prevUrl, nextUrl } = Astro.props;
+---
+
+<nav
+  style={{ display: "flex", gap: "1rem", justifyContent: "center" }}
+  aria-label="Blog Pagination"
+>
+  {
+    prevUrl && (
+      <Link
+        text="Previous"
+        href={prevUrl}
+        style="primary"
+        borderVsible={true}
+        isFilled={false}
+        icon={{
+          name: "tabler:arrow-big-left-line",
+          side: "left",
+        }}
+      />
+    )
+  }
+  {
+    nextUrl && (
+      <Link
+        text="Next"
+        href={nextUrl}
+        style="primary"
+        borderVsible={true}
+        isFilled={false}
+        icon={{
+          name: "tabler:arrow-big-right-line",
+          side: "right",
+        }}
+      />
+    )
+  }
+</nav>

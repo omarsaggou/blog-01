@@ -1,0 +1,24 @@
+---
+import HeadLayout from "./HeadLayout.astro";
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+const {
+  title = "Blog",
+  description = "Blog description",
+  image,
+  frontmatter,
+  robots,
+} = Astro.props;
+---
+
+<html lang="en">
+  <HeadLayout {title} {description} {image} {frontmatter} {robots} />
+  <body>
+    <Nav />
+    <main>
+      <slot> Something went wrong !!!</slot>
+    </main>
+    <Footer />
+  </body>
+</html>
