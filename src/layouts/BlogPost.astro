@@ -24,37 +24,24 @@ const relatedPost = formattedPosts
 <Layout {title} {description}  image={frontmatter.image} {frontmatter} robots={frontmatter.robots}>
   <PostHeader {title} {date} {category} {author} {image} />
   <div
-    class="post-content"
-    style={{
-      display: "flex",
-      flexDirection: "row",
-      gap: "1rem",
-      alignItems: "start",
-    }}
+    class="md:py-6 md:px-3 p-3 md:flex md:gap-2 "
   >
-    <div class="content">
+    <div class="content md:px-3">
       <slot />
     </div>
-    <div class="sidebar">
+    <div class="space-y-4 mt-2 md:mt-0">
       <aside
-        class="container"
-        aria-label="Blog Categories"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "1rem",
-          justifyContent: "start",
-          alignItems: "start",
-        }}
+        class="space-y-2"
+        aria-label="Blog Categories"        
       >
         <h2 class="h3">Blog Categories</h2>
         <CategoryCloud />
       </aside>
       {
         relatedPost.length > 0 && (
-          <aside class="container" aria-label="Related Posts">
+          <aside class="space-y-2" aria-label="Related Posts">
             <h1 class="h3">Related Category</h1>
-            <div class="post-container">
+            <div class="">
               {relatedPost.map((post: any) => (
                 <RelatedPosts {relatedPost}/>
               ))}

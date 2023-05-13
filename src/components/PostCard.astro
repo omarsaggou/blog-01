@@ -8,13 +8,14 @@ const { title, date, description, category, author, image } = frontmatter;
 const Tag = tagType;
 ---
 
-<article class="card">
-  <div class="container">
+<article class="py-3 border rounded-lg shadow-lg">
+  <div class="">
     <small>
       <a href={`/category/${slugify(category)}`} class="badge">{category}</a>
     </small>
     <a href={url} aria-hidden="true" tabindex="-1">
       <Image
+        class="pb-3"
         src={image.src}
         alt={image.alt}
         width={400}
@@ -24,19 +25,23 @@ const Tag = tagType;
         quality={80}
         aspectRatio="4:1"
       />
-      <div class="content">
-        <div>
-          <Tag class="h3">
-            <a href={url}> {title}</a>
-          </Tag>
+      <div class="px-4">
+        <div class="content">
+          <div>
+            <Tag class="h3">
+              <a href={url}> {title}</a>
+            </Tag>
+          </div>
+          <small>
+            by {" "}<a href={`/author/${slugify(author)}`}>{author}</a>{" "}
+            {formatDate(date)}
+          </small>
         </div>
-        <small>
-          by {" "}<a href={`/author/${slugify(author)}`}>{author}</a>{" "}
-          {formatDate(date)}
-        </small>
+        <p class="px-4">{description}</p>
+        <div class="px-4">
+          <Link href={url} style="primary" text="Read more" />
+        </div>
       </div>
-      <p>{description}</p>
-      <Link href={url} style="primary" text="Read more" />
     </a>
   </div>
 </article>

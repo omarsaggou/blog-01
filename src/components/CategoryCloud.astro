@@ -18,7 +18,7 @@ const processedCats = allCategories.reduce((acc: any, category: any) => {
 const { showCount } = Astro.props;
 ---
 
-<ul class="categories">
+<ul class="categories justify-start">
   {
     Object.entries(processedCats).map(([key, val]) => (
       <li>
